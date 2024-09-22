@@ -46,7 +46,11 @@ app.post('/bfhl', (req, res) => {
     file_size_kb
   });
 });
-
+app.get('/bfhl', (req, res) => {
+  res.status(200).json({
+    operation_code: 1
+  });
+});
 app.get('/', (req, res) => {
   res.json({ message: "Hello From Express App" });
 });
