@@ -1,6 +1,6 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const cors = require('cors')
+import express from 'express';
+import bodyParser from 'body-parser';
+import cors from 'cors';
 
 const app = express();
 app.use(cors({
@@ -51,4 +51,5 @@ app.get('/', (req, res) => {
   res.json({ message: "Hello From Express App" });
 });
 
-module.exports = app;
+// Export the app for Vercel
+export default app;
