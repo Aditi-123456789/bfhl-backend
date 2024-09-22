@@ -3,10 +3,7 @@ import bodyParser from 'body-parser';
 import cors from 'cors';
 
 const app = express();
-app.use(cors({
-    origin: "https://bfhl-frontend-uku7.vercel.app/",
-    credentials: true 
-}));
+app.use(cors());
 app.use(bodyParser.json());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
