@@ -4,7 +4,7 @@ import cors from 'cors';
 
 const app = express();
 app.use(cors({
-    origin: "http://localhost:3000",
+    origin: "https://bfhl-frontend-uku7.vercel.app/",
     credentials: true 
 }));
 app.use(bodyParser.json());
