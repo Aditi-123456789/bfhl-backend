@@ -4,9 +4,9 @@ const cors = require('cors')
 
 const app = express();
 app.use(cors({
-    origin : "http://localhost:3000",
+    origin: "http://localhost:3000",
     credentials: true 
-}))
+}));
 app.use(bodyParser.json());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -26,7 +26,7 @@ app.post('/bfhl', (req, res) => {
   let file_valid = false;
   let file_mime_type = null;
   let file_size_kb = 0;
-  
+
   if (file_b64) {
     file_valid = true;
     file_mime_type = "image/png";
@@ -46,11 +46,9 @@ app.post('/bfhl', (req, res) => {
     file_size_kb
   });
 });
+
 app.get('/', (req, res) => {
-res.json({message :  "Hello From Express App "})
+  res.json({ message: "Hello From Express App" });
 });
 
-const port = 5001;
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
-});
+module.exports = app;
